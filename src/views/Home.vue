@@ -2,8 +2,8 @@
   <div id="home">
     <div class="main">
       <div class="header">
-        <div class="desktop-logo"><img src="../assets/logo_pineapple.svg" alt="logo"></div>
-        <div class="mobile-logo"><img src="../assets/logo.svg" alt="logo"></div>
+        <div class="desktop-logo"><img src="../assets/img/logo_pineapple.svg" alt="logo"></div>
+        <div class="mobile-logo"><img src="../assets/img/logo.svg" alt="logo"></div>
         <ul class="nav-menu">
           <li><a href="#">About</a></li>
           <li><a href="#">How it works</a></li>
@@ -72,7 +72,7 @@ export default {
     width: 1240px
     min-height: 1080px
     left: 680px
-    background: url('../assets/image_summer.png') no-repeat
+    background: url('../assets/img/image_summer.png') no-repeat
   .main
     position: absolute
     top: 0px

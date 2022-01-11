@@ -1,6 +1,6 @@
 <template>
     <div class="success-message">
-      <img src="../assets/ic_success.svg" alt="">
+      <img src="../assets/img/ic_success.svg" alt="">
       <h2>Thanks for subscribing!</h2>
       <p class="subheading">You have successfully subscribed to our email listing. Check your email for the discount code.</p>
     </div>

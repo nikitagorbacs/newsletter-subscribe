@@ -31,7 +31,6 @@
         <div class="checkmark" name="checkmark"></div>
         <label for="check" class="tos-label">I agree to <a href="#">terms of service</a></label>
     </div>
-    {{ submited }}
   </form>
 </template>
 
