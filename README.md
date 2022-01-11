@@ -24,9 +24,9 @@ Backend consists from config directory where Database object is located. In mode
 
 Development version:
 
-1. Download and place php folder on your server and make sure that your server is running.
+1. Download whole project and place php folder on your server and make sure that your server is running.
 
-2. Create new database. Then create table subscribers with 2 fields - id which is integer + AI and email which has type as a varchar.
+2. Create new database. Then create table subscribers with 2 fields - id which is integer + AI and email which has type of a varchar.
 
 3. Go inside the php folder and then inside config folder. Open Database.php file and set your host, database name, username and password.
 
