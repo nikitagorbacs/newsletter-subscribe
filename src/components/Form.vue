@@ -18,17 +18,20 @@
         class="submit-field"
         value="&#8594;"
         @click.prevent="submitForm"
-        :class="{active: !errors.length && email }"
+        :class="{active: email && emailError == '' && checked}"
         />
     </div>
-    <div v-for="error in errors" :key="error">
+    <!-- <div v-for="error in errors" :key="error">
         <p class="error">{{ error }}</p>
-    </div>
+    </div> -->
+      <p v-if="emailError != ''" class="error"> {{ emailError }} </p>
+      <p v-if="!checked" class="error"> {{ checkError }} </p>
     <div class="tos">
         <input type="checkbox" id="check" name="check" @click="checked = !checked">
         <div class="checkmark" name="checkmark"></div>
         <label for="check" class="tos-label">I agree to <a href="#">terms of service</a></label>
     </div>
+    {{ submited }}
   </form>
 </template>
 
@@ -39,19 +42,17 @@ import axios from 'axios'
             return {
                 email: '',
                 submited: false,
-                errors: [],
+                emailError: '',
+                checkError: '',
                 checked: false
             }
         },
         methods: {
             submitForm(){
               if (!this.checked) {
-                this.errors = []
-                this.errors.push('You must accept terms and conditions');
-              } else {
-                this.errors = []
+                this.checkError = 'You must accept terms and conditions';
               }
-              if(this.errors.length == 0 && this.checked){
+              if(this.emailError == '' && this.checked){
                   axios
                   .post('http://localhost:8081/magebit-test-assignment/api/create.php', {
                       email: this.email
@@ -69,19 +70,15 @@ import axios from 'axios'
             formValidation(e){
               //Check if email and checkbox are valid
               if(this.email == '') {
-                this.errors = [];
-                this.errors.push('Email address is required');
+                this.emailError = 'Email address is required';
               }
               else if(!this.validEmail(this.email)){
-                this.errors = [];
-                this.errors.push('Please enter a valid email address') 
+                this.emailError = 'Please enter a valid email address';
               } else if(this.email.slice(-2) == 'co') {
-                this.errors = [];
-                this.errors.push('We are not accepting subscriptions from Colombia emails');
+                this.emailError = 'We are not accepting subscriptions from Colombia emails';
               } else {
-                this.errors = []
+                this.emailError = '';
               }
-
               e.preventDefault();     
             },
         },
