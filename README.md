@@ -13,7 +13,9 @@ Project has separate backend and frontend parts.
 Frontend was created by using VueJs framework. Sass was used for styling. Vue router was used for client-side routing.
 
 Project has 2 pages:
+
 / - main/home page
+
 /subscribers - subscribers email list
 
 Backend consists from config directory where Database object is located. In models directory is located SubscriberModel which is responsible for communication with a database. In api directory you can find 3 API's endpoints which are used in the project to get, post and delete data.
